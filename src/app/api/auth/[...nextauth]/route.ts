@@ -1,15 +1,26 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from "bcrypt";
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
+import type { DefaultSession, NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
 import { PrismaClient } from "@prisma/client";
 
+// Extend the session user type to include id and role
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+      role: string;
+    } & DefaultSession["user"];
+  }
+}
+
 const prisma = new PrismaClient();
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthConfig = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
@@ -43,7 +54,7 @@ export const authOptions: AuthOptions = {
 
         const isCorrectPassword = await bcrypt.compare(
           credentials.password,
-          user.hashedPassword
+          user.hashedPassword as string
         );
 
         if (!isCorrectPassword) {
@@ -61,19 +72,19 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "fallback-secret-for-dev-only",
   callbacks: {
     async session({ session, token }) {
       if (token && session.user) {
-        session.user.id = token.sub;
-        session.user.role = token.role as any;
+        session.user.id = token.sub as string;
+        session.user.role = token.role as string;
       }
       return session;
     },
     async jwt({ token, user }) {
       if (user) {
         token.sub = user.id;
-        token.role = user.role;
+        token.role = (user as any).role;
       }
       return token;
     },

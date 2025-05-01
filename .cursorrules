@@ -52,16 +52,16 @@
   - [ ] Cart
 
 #### 3. Authentication
-- [ ] Implement NextAuth.js authentication:
-  - [ ] Email/Password
-  - [ ] OAuth providers (Google, GitHub)
-  - [ ] JWT handling
-  - [ ] Protected routes
+- [X] Implement NextAuth.js authentication:
+  - [X] Email/Password
+  - [X] OAuth providers (Google, GitHub)
+  - [X] JWT handling
+  - [X] Protected routes
 
 #### 4. Store Frontend
-- [ ] Create responsive layouts:
-  - [ ] Main layout
-  - [ ] Home page
+- [X] Create responsive layouts:
+  - [X] Main layout
+  - [X] Home page
   - [ ] Products listing page
   - [ ] Product detail page
   - [ ] Search functionality
