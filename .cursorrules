@@ -1,0 +1,127 @@
+# Cursor Rules
+
+## Instructions
+
+- Record fixes for mistakes or corrections to avoid repetition in the `Lessons` section.
+- Organize thoughts and plan steps before starting a task in the `Scratchpad` section.
+- Clear old tasks if necessary.
+- Use todo markers for progress tracking:
+  - `[X]` Completed tasks
+  - `[ ]` Pending tasks
+- Update Scratchpad after completing subtasks.
+- Reflect and plan after milestones for better task management.
+- Always refer to Scratchpad before planning the next step.
+
+## Lessons
+
+
+## Scratchpad
+
+### Ecommerce Website & Admin Dashboard Development Plan
+
+#### 1. Project Setup
+- [X] Initialize Next.js 15 project with TypeScript
+- [X] Set up project structure and folders
+- [X] Configure ESLint and Prettier
+- [X] Install and configure dependencies:
+  - [X] UI: shadcn/ui, Lucide icons
+  - [X] State management: Zustand
+  - [X] Form handling: react-hook-form, Zod
+  - [X] API: Axios
+  - [X] Charts: Recharts
+  - [X] Email: Resend
+  - [X] File uploads: Uploadthing
+  - [X] Database: Prisma, PostgreSQL
+  - [X] Authentication: next-auth@beta
+  - [X] Payments: Stripe
+
+#### 2. Database & Backend Setup
+- [X] Set up PostgreSQL database
+- [X] Configure Prisma schema:
+  - [X] User model
+  - [X] Product model
+  - [X] Category model
+  - [X] Order model
+  - [X] Review model
+  - [X] Cart model
+- [ ] Create API routes for:
+  - [ ] Products
+  - [ ] Categories
+  - [ ] Orders
+  - [ ] Reviews
+  - [ ] Cart
+
+#### 3. Authentication
+- [ ] Implement NextAuth.js authentication:
+  - [ ] Email/Password
+  - [ ] OAuth providers (Google, GitHub)
+  - [ ] JWT handling
+  - [ ] Protected routes
+
+#### 4. Store Frontend
+- [ ] Create responsive layouts:
+  - [ ] Main layout
+  - [ ] Home page
+  - [ ] Products listing page
+  - [ ] Product detail page
+  - [ ] Search functionality
+  - [ ] Filters and sorting
+- [ ] Shopping cart implementation:
+  - [ ] Add to cart
+  - [ ] Update cart items
+  - [ ] Remove items
+  - [ ] Cart preview
+- [ ] Checkout process:
+  - [ ] Shipping information
+  - [ ] Payment integration with Stripe
+  - [ ] Order confirmation
+- [ ] User account section:
+  - [ ] Profile management
+  - [ ] Order history
+  - [ ] Wishlist
+  - [ ] Reviews management
+
+#### 5. Admin Dashboard
+- [ ] Admin layout and authentication
+- [ ] Dashboard overview with Recharts:
+  - [ ] Sales analytics
+  - [ ] Order statistics
+  - [ ] User growth
+- [ ] Product management:
+  - [ ] List, create, edit, delete products
+  - [ ] Image uploads with Uploadthing
+  - [ ] Inventory management
+- [ ] Category management
+- [ ] Order management:
+  - [ ] Order listing and details
+  - [ ] Order status updates
+  - [ ] Fulfillment tracking
+- [ ] User management:
+  - [ ] Customer accounts
+  - [ ] Admin accounts
+  - [ ] Role management
+- [ ] Settings and configuration
+
+#### 6. Advanced Features
+- [ ] Notifications system:
+  - [ ] Email notifications with Resend
+  - [ ] In-app notifications
+- [ ] Reviews and ratings system
+- [ ] Wishlist functionality
+- [ ] Product recommendations
+- [ ] Search with filtering and sorting
+- [ ] Promotions and discount codes
+- [ ] SEO optimization
+
+#### 7. Testing & Optimization
+- [ ] Unit and integration tests
+- [ ] Performance optimization
+- [ ] Accessibility improvements
+- [ ] SEO implementation
+- [ ] Error handling and logging
+
+#### 8. Deployment
+- [ ] Setup CI/CD pipeline
+- [ ] Deploy to production
+- [ ] Monitor performance and errors
+- [ ] Documentation
